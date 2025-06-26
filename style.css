@@ -1,0 +1,162 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    height: 15vh;
+    width: 100%;
+    /* border: 2px solid black; */
+    background: linear-gradient(to right , purple , blue , purple);
+    position: sticky;
+    top: 0px;
+    z-index: 2;
+}
+
+.logo>img{
+    width: 100px;
+    border-radius: 50%;
+}
+
+.navbar > ul{
+    display: flex;
+    margin-right: 125px;
+}
+
+.navbar > ul > li{
+    list-style: none;
+    padding: 10px;
+    font-size: 25px;
+    color: white;
+}
+
+p{
+    font-size: 40px;
+    color: #ffef05;
+    margin-left: 30px;
+    padding-left:70px ;
+    
+}
+
+.body{
+    height: 100vh;
+    /* border: 2px solid black; */
+    background: linear-gradient(to right, #7a7ab700, #d7a3d7eb, #b53fb533);
+}
+
+.body> p {
+    width: 30vw;
+    position: relative;
+    left: 550px;
+    top: 10px;
+    margin: 0;
+    padding: 0;
+    color: #940808;
+    z-index: 1;
+    font-size: 35px;
+}
+
+.searchBar{
+    display: flex;
+    justify-content: end;
+    margin-top: -30px;
+    
+}
+
+.searchBox{
+    width: 260px;
+    height: 25px;
+    border: 3px solid rgb(94, 5, 94);
+    border-radius: 25px;
+   
+    
+}
+
+.button{
+    margin: 10px;
+    border-radius: 25px;
+}
+
+.button:hover{
+    cursor: pointer;
+    padding: 1.5px;
+    background: rgb(244, 205, 244);
+}
+
+.restoContainer{
+    position: relative;
+    /* bottom: 12vh; */
+    left: 150px;
+    width: 80vw;
+    height: 61vh;
+    border: 2px solid rgb(240, 167, 240);
+    /* margin-left: 270px ; */
+    margin-top: 25px;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    
+
+}
+
+.cards{
+    /* background: linear-gradient(to right, #fb40b094, #e761e794); */
+    width: 350px;
+    height: 400px;
+    box-shadow: 8px 8px 8px #e47fbaba;
+    margin: 9px;
+    padding: 1.5px;
+    
+}
+
+.cards:hover{
+    cursor: pointer;
+    background: #fff9fe86;
+    width: 330px;
+    height: 380px;
+    
+}
+
+.cards:hover img{
+    transform: scale(1.09);
+    transition: transform 1s ease;
+    height: 220px;
+    width: 330px;
+    border-radius: 40%;
+}
+
+.description> h5{
+    margin: 2px 0px;
+    padding: 2px 0px;
+}
+
+.img{
+    height: 220px;
+    width: 350px;
+}
+
+.description h4{
+    margin: 0;
+    padding: 0;
+    font-weight: lighter;
+    color: black;
+}
+
+.footer{
+    height: 6vh;
+    width: 100vw;
+    /* border: 2px solid rebeccapurple; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(to right , purple , blue , purple);
+    /* position: fixed; */
+    /* bottom: 0 ; */
+
+}
+
+.icon{
+    padding: 10px;
+    font-size: 15px;
+    color: rgb(234, 222, 245);
+}
+
