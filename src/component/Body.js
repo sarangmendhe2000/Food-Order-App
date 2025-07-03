@@ -1,34 +1,49 @@
 import restList from "../utils/mockdata";
 import Cards from "./Cards";
-import { use, useState } from "react";
+import {useEffect, useState } from "react";
+import Sheemer from "./Sheemer";
 
 
 const Body = () => {
 
   // local state variable
-  const [restorantList , setRestorantList] = useState(restList)
-  const [searchText , setSearchText] = useState('')
+  const [restorantList , setRestorantList] = useState(restList);
+  const [searchText , setSearchText] = useState('');
+  const [filterList , setFilterList] = useState(restList);
 
-  const searchHandler = (e) =>{
+  useEffect(()=>{
+      fetchData();
+      // console.log("UseEffect Working")
+  },[])
 
-      e.preventDefault(); 
 
-      const filtered = restList.filter((res)=>{
-       return res.info.name.toLowerCase().includes(searchText.toLowerCase())
-      })
-      setRestorantList(filtered)
-      setSearchText('');
+  const fetchData = async () =>{
 
+    const data = await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=22.7527421&lng=75.88371599999999&carousel=true&third_party_vendor=1");
+
+   
+    const json = await data.json();
+
+  console.log(json)
+  setRestorantList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+  setFilterList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+
+  }
+  
+  if(restorantList.length === 0)
+  {
+    return <Sheemer/>
+    
   }
 
   return (
     
     <div className="body">
-      
-       <p>Search Delicious Food Here...</p>
+    
+       <p>Your Taste, Our Priority</p>
        <div className="btn" onClick={() =>{
-        const filterList = restList.filter((resto) => resto.info.avgRating > 4.3)
-        setRestorantList(filterList);
+        const filterList = restorantList.filter((resto) => resto.info.avgRating > 4.3)
+        setFilterList(filterList);
        
         }}>
             <button className="top-btn">
@@ -37,7 +52,7 @@ const Body = () => {
         </div>
       <div className="searchBar">
        
-        <form onSubmit={searchHandler}>
+        
           <input type="text" className="searchBox"
           placeholder="Search restorant here"
           value={searchText}
@@ -48,10 +63,17 @@ const Body = () => {
            />
 
         
-          <button type="submit" className="button">
+          <button type="submit" className="button" onClick={()=>{
+            const filteredResto = restorantList.filter((res)=>{
+              return res.info.name.toLowerCase().includes(searchText.toLowerCase())
+            })
+            setFilterList(filteredResto);
+            setSearchText('')
+           
+          }}>
             Search
           </button>
-        </form>
+        
 
       </div>
       
@@ -60,7 +82,7 @@ const Body = () => {
 
       <div className="restoContainer">
           {
-            restorantList.map((restaurant) =>(
+            filterList.map((restaurant) =>(
                 <Cards key={restaurant.info.id}  restData ={restaurant}/>
                 
             ))

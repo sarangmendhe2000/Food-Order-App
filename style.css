@@ -65,6 +65,7 @@ p{
     height: 25px;
     border: 3px solid rgb(94, 5, 94);
     border-radius: 25px;
+
    
     
 }
@@ -76,8 +77,9 @@ p{
 
 .button:hover{
     cursor: pointer;
-    padding: 1.5px;
-    background: rgb(244, 205, 244);
+    /* padding: 5px; */
+    background: rgb(179, 20, 179);
+    color: white;
 }
 
 .restoContainer{
@@ -181,4 +183,13 @@ p{
     font-weight: bolder;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     transition: all 0.7s ease-in ;
+}
+
+.login{
+    padding: 5px 10px;
+    border-radius: 25% ;
+    cursor: pointer;   
+}
+.login:hover{
+    padding: 6px 11px;
 }

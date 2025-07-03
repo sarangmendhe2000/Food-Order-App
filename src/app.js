@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import Header from "./component/Header";
 import Body from "./component/Body";
 import Footer from "./component/Footer";
+import { HashRouter } from "react-router-dom";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -18,4 +19,11 @@ const AppDesign = () => {
   );
 };
 
-root.render(<AppDesign />);
+root.render(
+
+  <HashRouter>
+    <AppDesign />
+  </HashRouter>
+
+
+);
