@@ -19,7 +19,7 @@ const Body = () => {
 
   const fetchData = async () =>{
 
-    const data = await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=22.7527421&lng=75.88371599999999&carousel=true&third_party_vendor=1");
+    const data = await fetch("https://swiggy-api-4c740.web.app/swiggy-api.json");
 
    
     const json = await data.json();
@@ -42,7 +42,7 @@ const Body = () => {
     
        <p>Your Taste, Our Priority</p>
        <div className="btn" onClick={() =>{
-        const filterList = restorantList.filter((resto) => resto.info.avgRating > 4.3)
+        const filterList = restorantList.filter((resto) => resto.info.avgRating > 4.2)
         setFilterList(filterList);
        
         }}>
@@ -79,7 +79,7 @@ const Body = () => {
       
     
 
-
+      
       <div className="restoContainer">
           {
             filterList.map((restaurant) =>(
@@ -88,6 +88,7 @@ const Body = () => {
             ))
           }                           
       </div>
+      
     </div>
   );
 };

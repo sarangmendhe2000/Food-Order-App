@@ -4,7 +4,7 @@
     height: 15vh;
     width: 100%;
     /* border: 2px solid black; */
-    background: linear-gradient(to right , purple , blue , purple);
+    background: linear-gradient(to right, #e89948, #502e07db, #e18d27);
     position: sticky;
     top: 0px;
     z-index: 2;
@@ -38,7 +38,7 @@ p{
 .body{
     height: 100vh;
     /* border: 2px solid black; */
-    background: linear-gradient(to right, #7a7ab700, #d7a3d7eb, #b53fb533);
+    background: linear-gradient(to right, #6a3904, #d7c27099, #694121f7);;
 }
 
 .body> p {
@@ -55,56 +55,96 @@ p{
 
 .searchBar{
     display: flex;
-    justify-content: end;
-    margin-top: -60px;
+    justify-content: right;
+    margin-bottom: -10px;
+    margin-top: -40px;
+    margin-right: 70px;
     
 }
 
 .searchBox{
-    width: 260px;
-    height: 25px;
-    border: 3px solid rgb(94, 5, 94);
+    width: 300px;
+    height: 35px;
+    border: 5px solid rgb(167, 131, 13);
     border-radius: 25px;
 
-   
+  background: #f0e0b2; /* light cream background */
+  color: #333;         /* dark text */
+  font-size: 16px;
+  font-family: 'Segoe UI', sans-serif;
+  transition: 0.3s ease-in-out;
+  box-shadow: 0 2px 5px rgba(167, 131, 13, 0.3);
     
+}
+
+.searchBox::placeholder {
+  color: #644f26;
+  font-style: italic;
 }
 
 .button{
     margin: 10px;
     border-radius: 25px;
+    height: 35px;
+    padding: 10px;
+    background: linear-gradient(to right, #dcc79c6b, #9c773d);
 }
 
 .button:hover{
     cursor: pointer;
     /* padding: 5px; */
-    background: rgb(179, 20, 179);
+    background: linear-gradient(to right , rgb(230, 167, 112) , rgb(249, 169, 65) );
     color: white;
 }
 
 .restoContainer{
     position: relative;
-    /* bottom: 12vh; */
-    left: 150px;
-    width: 80vw;
-    height: 61vh;
-    border: 2px solid rgb(240, 167, 240);
+    bottom: 8vh;
+    left: 200px;
+    width: 75vw;
+    height: 80vh;
+    border: 4px solid #d7c27099;
+    border-radius: 5px;
     /* margin-left: 270px ; */
     margin-top: 95px;
     overflow: auto;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     align-items: center;
     
-
+    
 }
+.restoContainer::-webkit-scrollbar {
+  width: 40px;
+}
+
+.restoContainer::-webkit-scrollbar-track {
+  background: #f5f1e0; /* light background track */
+  border-radius: 20px;
+ 
+}
+
+.restoContainer::-webkit-scrollbar-thumb {
+  background-color: #d7c270; /* golden thumb */
+  border-radius: 20px;
+  border: 3px solid #f5f1e0; /* creates padding around thumb */
+}
+
+.restoContainer::-webkit-scrollbar-thumb:hover {
+  background-color: #b89e40; /* darker on hover */
+}
+.restoContainer {
+  scrollbar-width: thin;
+  scrollbar-color: #d7c270 #f5f1e0;
+}
+
 
 .cards{
     /* background: linear-gradient(to right, #fb40b094, #e761e794); */
     width: 350px;
     height: 400px;
-    box-shadow: 8px 8px 8px #e47fbaba;
+    box-shadow: 8px 8px 8px #d7c27099;
     margin: 9px;
     padding: 1.5px;
     
@@ -112,7 +152,7 @@ p{
 
 .cards:hover{
     cursor: pointer;
-    background: #fff9fe86;
+    background: linear-gradient(to right, #e8984857, #502e07db, #e18d2777);
     width: 330px;
     height: 380px;
     
@@ -121,8 +161,8 @@ p{
 .cards:hover img{
     transform: scale(1.09);
     transition: transform 0.9s ease;
-    height: 220px;
-    width: 330px;
+    height: 185px;
+    width: 316px;
     border-radius: 40%;
 }
 
@@ -150,9 +190,9 @@ p{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(to right , purple , blue , purple);
-    /* position: fixed; */
-    /* bottom: 0 ; */
+    background: linear-gradient(to right, #e89948, #502e07db, #e18d27);
+    position: fixed; 
+    bottom: 0 ;
 
 }
 
@@ -165,20 +205,22 @@ p{
 .top-btn{
     cursor: pointer;
     position: relative;
-    top: 55px;
-    left: 215px;
+    top: 22px;
+    left: 235px;
     padding: 15px;
-    background: linear-gradient(to right , purple , blue );
+    background: linear-gradient(to right, #6f4d0875, #d48a1484);
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     border-radius: 50%;
+    border: 2px solid rgb(120, 6, 6);
+    font-style: italic;
 
     
 }
 
 .top-btn:hover{
     
-    background: linear-gradient(to right , rgb(162, 97, 215) , blue );
+    background: linear-gradient(to right , rgb(253, 120, 4) , rgb(122, 72, 5) );
     padding: 16px;
     font-weight: bolder;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
