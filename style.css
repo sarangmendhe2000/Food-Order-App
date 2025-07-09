@@ -36,7 +36,7 @@ p{
 }
 
 .body{
-    height: 100vh;
+    height: 150vh;
     /* border: 2px solid black; */
     background: linear-gradient(to right, #6a3904, #d7c27099, #694121f7);;
 }

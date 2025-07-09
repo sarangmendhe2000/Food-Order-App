@@ -2,6 +2,7 @@ import restList from "../utils/mockdata";
 import Cards from "./Cards";
 import {useEffect, useState } from "react";
 import Sheemer from "./Sheemer";
+import { Link } from "react-router-dom";
 
 
 const Body = () => {
@@ -19,7 +20,7 @@ const Body = () => {
 
   const fetchData = async () =>{
 
-    const data = await fetch("https://swiggy-api-4c740.web.app/swiggy-api.json");
+    const data = await fetch("https://www.swiggy.com/mapi/restaurants/list/v5?offset=0&is-seo-homepage-enabled=true&lat=22.7527421&lng=75.88371599999999&carousel=true&third_party_vendor=1");
 
    
     const json = await data.json();
@@ -83,7 +84,11 @@ const Body = () => {
       <div className="restoContainer">
           {
             filterList.map((restaurant) =>(
-                <Cards key={restaurant.info.id}  restData ={restaurant}/>
+              <Link
+              key={restaurant.info.id}
+              to={"/restaurants/" + restaurant.info.id}>
+              <Cards restData ={restaurant}/>
+              </Link>  
                 
             ))
           }                           
