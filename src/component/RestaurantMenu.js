@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Sheemer from "./Sheemer";
 import { useParams } from "react-router-dom";
 import { RESTMENU_URL } from "../utils/constants";
+import { CARD_URL } from "../utils/constants";
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState(null);
@@ -54,32 +55,51 @@ const RestaurantMenu = () => {
   console.log(itemCards);
 
   return (
-    <div>
+    <div className="resBody">
       <div className="resPage">
       <div className="resInfo">
           <div className="name"><h1>{name}</h1></div>
           <div className="box">
           <div className="rating">Rating - {avgRatingString} stars</div>
-          <div className="deliveryTime">Deliver in - <span>{minDeliveryTime}</span> - <span>{maxDeliveryTime}</span> minutes</div>
+          <div className="cuisines"><h3>{cuisines.join(", ")}</h3></div>  
+          <div className="deliveryTime"><span>{minDeliveryTime}</span> - <span>{maxDeliveryTime} minutes</span>  - Delivery Time </div>
           <div className="costForTwo">{costForTwoMessage}</div>
           </div>
            </div> 
       </div>
 
 
-      <div className="resMenu"></div>
-      <h3>{cuisines.join(", ")}</h3>
-
-      <h2>Menu</h2>
-      <ul>
-        {itemCards.map((item) => (
-          <li key={item.card.info.id}>
+    
+   <div className="newOffer">
+   <div className="menu">New Offering</div>
+<div className="menuItems">
+  <ul>
+    {itemCards.map((item) => (
+      <li key={item.card.info.id}>
+        <div className="foodItems">
+          <div className="left">
+            <div className="priceInfo">
             {item.card.info.name} - Rs.{" "}
             {item.card.info.defaultPrice / 100 || item.card.info.price / 100}
-          </li>
-        ))}
-      </ul>
+            </div>
+            <div className="description">
+              {item.card.info.description}
+            </div>
+          </div>
+          <div className="right">
+            <img className="MenuImg"
+            src={CARD_URL + item.card.info.imageId}>
+
+             </img>
+          </div>
+        </div>
+      </li>
+    ))}
+  </ul>
+</div>
+</div>
     </div>
+
   );
 };
 

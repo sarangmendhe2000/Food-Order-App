@@ -40,16 +40,19 @@ const Body = () => {
   return (
     
     <div className="body">
-    
-       <p>Your Taste, Our Priority</p>
+        <div className="bodyLine">
+          <button className="top-btn">
+              Top Restaurants
+            </button>
+       <span className="floating-text">Discover Delicious Meals Near You</span>
+       
+       </div>
        <div className="btn" onClick={() =>{
         const filterList = restorantList.filter((resto) => resto.info.avgRating > 4.2)
         setFilterList(filterList);
        
         }}>
-            <button className="top-btn">
-              Top Restaurants
-            </button>
+            
         </div>
       <div className="searchBar">
        

@@ -15,7 +15,7 @@ const Header = () => {
         <img src={LOGO_URL} alt="Food Delivery Logo" />
       </div>
 
-      <div>
+      <div className="tagline">
         <p>Order Your Food Now</p>
       </div>
 
