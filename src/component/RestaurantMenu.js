@@ -59,6 +59,8 @@ const RestaurantMenu = () => {
       <div className="resPage">
       <div className="resInfo">
           <div className="name"><h1>{name}</h1></div>
+            <button className="orderBtn">Order Now</button>
+          
           <div className="box">
           <div className="rating">Rating - {avgRatingString} stars</div>
           <div className="cuisines"><h3>{cuisines.join(", ")}</h3></div>  
@@ -71,7 +73,7 @@ const RestaurantMenu = () => {
 
     
    <div className="newOffer">
-   <div className="menu">New Offering</div>
+   <div className="menu">Recommended for You...</div>
 <div className="menuItems">
   <ul>
     {itemCards.map((item) => (
