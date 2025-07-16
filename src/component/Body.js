@@ -3,6 +3,7 @@ import Cards from "./Cards";
 import {useEffect, useState } from "react";
 import Sheemer from "./Sheemer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "./useOnlineStatus"; 
 
 
 const Body = () => {
@@ -36,6 +37,20 @@ const Body = () => {
     return <Sheemer/>
     
   }
+   const onlinestatus = useOnlineStatus();
+  if(onlinestatus === false)
+    {
+      return(
+        <div>
+       <h1>Ahh! Look Like You Are Offline !</h1>
+       <h1>Check Your Internet Connection...</h1>
+       <h1 style={{ color: "green", fontSize: "36px", fontWeight: "bold" }}>  
+        Delicious Food waiting for you... </h1>
+        </div>
+        
+      )
+    }
+
 
   return (
     

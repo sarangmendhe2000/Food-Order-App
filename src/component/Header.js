@@ -1,10 +1,13 @@
 import { LOGO_URL } from "../utils/constants";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "./useOnlineStatus";
 
 const Header = () => {
   const [loginBtn, setLoginBtn] = useState("Login");
   console.log("Header render")
+
+  const onlineStatus = useOnlineStatus();
 
   useEffect(()=>{
     console.log("useEffect called")
@@ -30,7 +33,11 @@ const Header = () => {
           <li>
             <Link to = "/contact">Contact</Link>
           </li>
+           <li>
+            <Link to = "/instamart">Instamart</Link>
+          </li>
           <li>Cart</li>
+          
           <li>
             <button
               className="login"
@@ -51,7 +58,9 @@ const Header = () => {
 
             </button>
           </li>
+          <li style={{fontSize: "16px"}} > {onlineStatus ? "🟢 Online" : "🔴 Offline" } </li>
         </ul>
+        
       </div>
     </div>
   );

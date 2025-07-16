@@ -1,28 +1,12 @@
-import { useEffect, useState } from "react";
 import Sheemer from "./Sheemer";
-import { useParams } from "react-router-dom";
-import { RESTMENU_URL } from "../utils/constants";
 import { CARD_URL } from "../utils/constants";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
-  const [resInfo, setResInfo] = useState(null);
-  // const param = useParams();
-  // console.log(param)
 
-  const { resId } = useParams();
 
-  useEffect(() => {
-    fetchMenu();
-  }, []);
+  const  resInfo = useRestaurantMenu();
 
-  const fetchMenu = async () => {
-    const data = await fetch(RESTMENU_URL + resId);
-
-    const json = await data.json();
-    setResInfo(json.data);
-
-    console.log(json);
-  };
   if (resInfo === null) {
     return <Sheemer />;
   }
