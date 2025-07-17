@@ -3,13 +3,16 @@ import Cards from "./Cards";
 import {useEffect, useState } from "react";
 import Sheemer from "./Sheemer";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "./useOnlineStatus"; 
+import useOnlineStatus from "./useOnlineStatus";
 
 
 const Body = () => {
 
   // local state variable
+
   const [restorantList , setRestorantList] = useState(restList);
+
+
   const [searchText , setSearchText] = useState('');
   const [filterList , setFilterList] = useState(restList);
 
@@ -26,7 +29,7 @@ const Body = () => {
    
     const json = await data.json();
 
-  console.log(json)
+    console.log(json)
   setRestorantList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   setFilterList(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
 
@@ -37,7 +40,8 @@ const Body = () => {
     return <Sheemer/>
     
   }
-   const onlinestatus = useOnlineStatus();
+
+  const onlinestatus = useOnlineStatus();
   if(onlinestatus === false)
     {
       return(
@@ -49,7 +53,7 @@ const Body = () => {
         </div>
         
       )
-    }
+    }  
 
 
   return (
@@ -98,7 +102,7 @@ const Body = () => {
     
 
       
-      <div className="restoContainer">
+        <div className="restoContainer">
           {
             filterList.map((restaurant) =>(
               <Link

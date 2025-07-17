@@ -16,6 +16,7 @@ import { createBrowserRouter, RouterProvider , Outlet } from "react-router-dom";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 //lazy loading
+
 const Instamart = lazy(()=> import("./component/Instamart"));
 
     

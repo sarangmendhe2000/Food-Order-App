@@ -2,6 +2,7 @@ import { json } from "react-router-dom";
 import User from "./user";
 import UserClass from "./UserClass";
 import React, { useEffect } from "react";
+import Button from '@mui/material/Button';
 
 
 // class About extends React.Component{
@@ -99,6 +100,10 @@ const About = () =>{
           <div>
         <h1>Here is About Page</h1>
         <h2>Thank you</h2>
+        <Button variant="contained" color="warning">
+        Click Me
+      </Button>
+
         <User name={"Sarang Mendhe"} location={"indore"}/>
         <UserClass name={"Sarang Mendhe"} location={"indore"}/>
     </div>
